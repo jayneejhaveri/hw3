@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
 
    def show
      # find a place
-     @place = Place.find_by({"id" => params["id"]})
+     @place = Place.find_by({ "id" => params["id"] })
      # render companies/show view with details about place
    end
 
