@@ -9,7 +9,7 @@ class EntriesController < ApplicationController
 
    def new
    # render view with new place form
-   @place = PLace.find_by({"id" => @entry["place_id"]})
+   @place = Place.find_by({"id" => @entry["place_id"]})
     # render posts/new view with new Post form
    end
 
