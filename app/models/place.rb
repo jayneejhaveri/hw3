@@ -15,11 +15,11 @@ peru["updated_at"] = "12-24-2023"
 peru.save
 
   # create input for Columbia
-  peru = Place.new
-peru["name"] = "Columbia"
-peru["created_at"] = "12-08-2023"
-peru["updated_at"] = "12-11-2023"
-peru.save
+  columbia = Place.new
+columbia["name"] = "Columbia"
+columbia["created_at"] = "12-08-2023"
+columbia["updated_at"] = "12-11-2023"
+columbia.save
 
   # create input for South Africa
   peru = Place.new
