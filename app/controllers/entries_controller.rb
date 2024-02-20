@@ -1,19 +1,15 @@
 class EntriesController < ApplicationController
-  def index
-    @entries = Entry.all 
-    # find all activity rows
-    # render activities/index view
-  end
-
+  
    def show
      # find a activity
      @entry = Entry.find_by({ "id" => params["id"] })
+     @place = Place.find_by({"id" => @entry["place_id"]})
      # render companies/show view with details about place
    end
 
    def new
    # render view with new place form
-   @entry = Entry.new
+   @place = PLace.find_by({"id" => @entry["place_id"]})
     # render posts/new view with new Post form
    end
 
@@ -27,10 +23,13 @@ class EntriesController < ApplicationController
      @entry["place_id"] = params["place_id"]
      @entry["created_at"] = params["created_at"]
      @entry["updated_at"] = params["updated_at"]
+
+         # assign relationship between Contact and Company
+     @entry["place_id"] = params["place_id"]
      # save Place row
      @Entry.save
 
      # redirect user
-     redirect_to "/entries"
+     redirect_to "/places/#{@entry["place_id"]}"
    end
 end

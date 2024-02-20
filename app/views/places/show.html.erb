@@ -1,14 +1,19 @@
 <!-- Details page for each place-->
 
-<h1><%= @places["name"] %></h1>
+<h1><%= @place["name"] %></h1>
 
-
-
-<!--
 <ul>
-<li><%= @entry["title"] %></li>
- <li><%= @entry["description"] %></li>
-</ul> -->
+  <% for entry in @entries %>
+    <li>
+      <a href="/entries/<%= entry["id"] %>">
+        <%= @entry["title"] %>
+      </a>
+    </li>
+  <% end %>
+</ul>
 
+<!--<p>
+  <a href="/entries/new?entry_id=<%= @entry["id"] %>">New entry</a>
+</p>-->
 
- <p><a href="/places">Back to All Places</a></p>
+<p><a href="/places">Back to All PLaces</a></p>

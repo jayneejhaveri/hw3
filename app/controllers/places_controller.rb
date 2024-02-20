@@ -7,8 +7,9 @@ class PlacesController < ApplicationController
 
    def show
      # find a place
-     @place = Place.find_by({ "id" => params["id"] })
+     @place = Place.find_by( "id" => params["id"] )
      # render companies/show view with details about place
+     @entries = Entry.where({ "place_id" => @place["id"] })
    end
 
    def new
@@ -25,7 +26,7 @@ class PlacesController < ApplicationController
      @place["created_at"] = params["created_at"]
      @place["updated_at"] = params["upadted_at"]
      # save Place row
-     @Place.save
+     @place.save
      # redirect user
      redirect_to "/places"
    end
