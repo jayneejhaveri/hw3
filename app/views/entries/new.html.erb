@@ -8,15 +8,20 @@
   </p>
 
   <p>
+    <label for="description">Description</label>
+    <input type="text" name="description">
+
+  </p>
+
+  <p>
     <label for="posted_on">Posted on</label>
-    <input type="text" name="posted_on">
+    <input type="date" name="posted_on">
 
   </p>
 
   <!-- transfer state from the previous action to the next -->
   <p>
-    <label for="place_id">PLace</label>
-    <input type="integer" name="place_id" value="<%= @place["id"] %>">
+    <input type="hidden" name="place_id" value="<%= @place["id"]%>">
   </p>
   <button>Submit</button>
 </form>
