@@ -23,8 +23,6 @@ class PlacesController < ApplicationController
      @place = Place.new
      # assign user-entered form data to Place's columns
      @place["name"] = params["name"]
-     @place["created_at"] = params["created_at"]
-     @place["updated_at"] = params["upadted_at"]
      # save Place row
      @place.save
      # redirect user
