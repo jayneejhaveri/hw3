@@ -2,18 +2,18 @@
 
 <h1><%= @place["name"] %></h1>
 
-<!--<ul>
+<ul>
   <% for entry in @entries %>
     <li>
       <a href="/entries/<%= entry["id"] %>">
-        <%= @entry["title"] %>
+        <%= entry["title"] %>
       </a>
     </li>
   <% end %>
-</ul>-->
+</ul>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place.id %>">New entry for <%= @place.name %></a>
+  <a href="/entries/new?place_id=<%= @place.id %>">New post for <%= @place.name %></a>
 </p>
 
-<p><a href="/places">Back to All PLaces</a></p>
+<p><a href="/places">Back to All Places</a></p>
